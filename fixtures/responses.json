@@ -1,0 +1,58 @@
+{
+  "https://alpha.invalid/robots.txt": [
+    {
+      "status": 200,
+      "body": "User-agent: DisclosureBot\nAllow: /report\nCrawl-delay: 2\n"
+    }
+  ],
+  "https://beta.invalid/robots.txt": [
+    {
+      "status": 200,
+      "body": "User-agent: *\nAllow: /\n"
+    }
+  ],
+  "https://gamma.invalid/robots.txt": [
+    {
+      "status": 200,
+      "body": "User-agent: *\nDisallow: /secret\nAllow: /public\n"
+    }
+  ],
+  "https://alpha.invalid/report?q=1": [
+    {
+      "status": 429,
+      "headers": {
+        "Retry-After": "8"
+      }
+    },
+    {
+      "status": 503,
+      "headers": {
+        "Retry-After": "Wed, 11 Nov 2026 12:00:20 GMT"
+      }
+    },
+    {
+      "status": 200,
+      "body": "甲披露"
+    }
+  ],
+  "https://alpha.invalid/report?q=2": [
+    {
+      "status": 200,
+      "body": "乙披露"
+    }
+  ],
+  "https://beta.invalid/data": [
+    {
+      "status": 302,
+      "headers": {
+        "Location": "https://gamma.invalid/secret"
+      }
+    }
+  ],
+  "https://gamma.invalid/public": [
+    {
+      "status": 200,
+      "body": "公开说明"
+    }
+  ]
+}

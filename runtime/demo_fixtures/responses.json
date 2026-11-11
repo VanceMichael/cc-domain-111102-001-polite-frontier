@@ -1,0 +1,78 @@
+{
+  "https://alpha.invalid/robots.txt": [
+    {
+      "status": 200,
+      "body": "User-agent: DisclosureBot\nAllow: /report\nCrawl-delay: 2\n"
+    }
+  ],
+  "https://beta.invalid/robots.txt": [
+    {
+      "status": 200,
+      "body": "User-agent: *\nAllow: /\n"
+    }
+  ],
+  "https://gamma.invalid/robots.txt": [
+    {
+      "status": 200,
+      "body": "User-agent: *\nDisallow: /private\nAllow: /\n"
+    }
+  ],
+  "https://alpha.invalid/report?q=1": [
+    {
+      "status": 429,
+      "headers": {
+        "Retry-After": "5"
+      }
+    },
+    {
+      "status": 429,
+      "headers": {
+        "Retry-After": "5"
+      }
+    },
+    {
+      "status": 429,
+      "headers": {
+        "Retry-After": "5"
+      }
+    },
+    {
+      "status": 200,
+      "body": "甲披露-1"
+    }
+  ],
+  "https://alpha.invalid/report?q=2": [
+    {
+      "status": 200,
+      "body": "甲披露-2"
+    }
+  ],
+  "https://beta.invalid/data": [
+    {
+      "status": 200,
+      "body": "乙数据"
+    }
+  ],
+  "https://beta.invalid/notes": [
+    {
+      "status": 200,
+      "body": "乙备注"
+    }
+  ],
+  "https://gamma.invalid/public": [
+    {
+      "status": 200,
+      "body": "丙公开"
+    }
+  ],
+  "https://gamma.invalid/private": [
+    {
+      "status": 200,
+      "body": "不应被请求"
+    },
+    {
+      "status": 200,
+      "body": "不应被请求"
+    }
+  ]
+}

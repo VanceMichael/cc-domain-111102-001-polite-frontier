@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "round_id": "round-7b7eab5f82ce",
+  "clock": {
+    "wall_origin": 1794398400.0,
+    "offset": 19.0
+  },
+  "origins": [
+    {
+      "origin": "https://alpha.invalid:443",
+      "robots_state": "ready",
+      "robots_attempts": 1,
+      "robots_until": null,
+      "robots_text": "User-agent: DisclosureBot\nCrawl-delay: 2.0\nAllow: /report\n",
+      "in_flight": 0,
+      "last_request_at": 19.0,
+      "backoff_until": 17.0,
+      "tasks": [
+        {
+          "url": "https://alpha.invalid/report?q=1",
+          "state": "done",
+          "attempts": 4
+        },
+        {
+          "url": "https://alpha.invalid/report?q=2",
+          "state": "done",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "origin": "https://beta.invalid:443",
+      "robots_state": "ready",
+      "robots_attempts": 1,
+      "robots_until": null,
+      "robots_text": "User-agent: DisclosureBot\nAllow: /\n",
+      "in_flight": 0,
+      "last_request_at": 2.0,
+      "backoff_until": null,
+      "tasks": [
+        {
+          "url": "https://beta.invalid/data",
+          "state": "done",
+          "attempts": 1
+        },
+        {
+          "url": "https://beta.invalid/notes",
+          "state": "done",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "origin": "https://gamma.invalid:443",
+      "robots_state": "ready",
+      "robots_attempts": 1,
+      "robots_until": null,
+      "robots_text": "User-agent: DisclosureBot\nDisallow: /private\nAllow: /\n",
+      "in_flight": 0,
+      "last_request_at": 0.0,
+      "backoff_until": null,
+      "tasks": [
+        {
+          "url": "https://gamma.invalid/public",
+          "state": "done",
+          "attempts": 1
+        },
+        {
+          "url": "https://gamma.invalid/private",
+          "state": "rejected",
+          "attempts": 0
+        }
+      ]
+    }
+  ]
+}

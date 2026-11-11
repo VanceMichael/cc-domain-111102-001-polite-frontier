@@ -1,0 +1,29 @@
+[
+  {
+    "origin": "https://alpha.invalid",
+    "concurrency": 1,
+    "min_interval": 2,
+    "urls": [
+      "https://alpha.invalid/report?q=1",
+      "https://alpha.invalid/report?q=2"
+    ]
+  },
+  {
+    "origin": "https://beta.invalid",
+    "concurrency": 2,
+    "min_interval": 1,
+    "urls": [
+      "https://beta.invalid/data",
+      "https://beta.invalid/notes"
+    ]
+  },
+  {
+    "origin": "https://gamma.invalid",
+    "concurrency": 1,
+    "min_interval": 0,
+    "urls": [
+      "https://gamma.invalid/public",
+      "https://gamma.invalid/private"
+    ]
+  }
+]
